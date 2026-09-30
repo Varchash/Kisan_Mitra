@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b7253">
+  <meta name="description" content="Smart Agriculture AI crop recommendation system">
+  <title>Kisan Mitra</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="#home" aria-label="Smart Agriculture AI home">
+      <span class="brand-mark"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 39C19 29 20 17 31 9c1 11-1 20-7 25" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/><path d="M23 31C17 28 12 23 12 15c8 1 13 6 13 13" fill="currentColor"/><path d="M24 39V17" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></span>
+      <span class="brand-text">Kisan Mitra</span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+    <nav class="nav-links" id="navLinks">
+      <a class="active" href="#home">⌂ <span>Home</span></a>
+      <a href="#predict">♢ <span>Predict</span></a>
+      <a href="#history">◷ <span>History</span></a>
+      <a href="#about">● <span>About</span></a>
+    </nav>
+    
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-label">🌿 &nbsp; SMARTER DECISIONS BETTER HARVESTS</div>
+        <h1>Crop Recommendation with <em>AI</em></h1>
+        
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="hero-sun">☀</div>
+        <div class="hero-hills"></div>
+        <div class="hero-field"></div>
+        <div class="hero-soil"></div>
+        <div class="hero-plant"><i></i><b></b><span></span></div>
+        <div class="hero-script">Better Farming<br><strong>Brighter Future</strong><u></u></div>
+      </div>
+    </section>
+
+    <section class="workspace" id="predict">
+      <div class="prediction-card">
+        <div class="section-heading">
+          <div class="heading-icon">🌿</div>
+          <div>
+            <h2>Enter Soil &amp; Weather Parameters</h2>
+            <p>Fill in the values below using your soil test results and local weather data.</p>
+          </div>
+        </div>
+
+        <form id="predictionForm" novalidate>
+          <div class="input-grid">
+            <label class="field">
+              <div class="field-title"><span class="field-icon n">N</span><span>Nitrogen (N)</span><small>kg/ha</small></div>
+              <input type="number" name="N" min="0" max="300" step="0.01" placeholder="e.g. 50" required>
+              <small class="range">(0 – 300)</small>
+            </label>
+            <label class="field">
+              <div class="field-title"><span class="field-icon p">P</span><span>Phosphorus (P)</span><small>kg/ha</small></div>
+              <input type="number" name="P" min="0" max="300" step="0.01" placeholder="e.g. 30" required>
+              <small class="range">(0 – 300)</small>
+            </label>
+            <label class="field">
+              <div class="field-title"><span class="field-icon k">K</span><span>Potassium (K)</span><small>kg/ha</small></div>
+              <input type="number" name="K" min="0" max="300" step="0.01" placeholder="e.g. 40" required>
+              <small class="range">(0 – 300)</small>
+            </label>
+            <label class="field">
+              <div class="field-title"><span class="field-icon temp">♨</span><span>Temperature</span><small>°C</small></div>
+              <input type="number" name="temperature" min="0" max="50" step="0.01" placeholder="e.g. 25" required>
+              <small class="range">(0 – 50)</small>
+            </label>
+            <label class="field">
+              <div class="field-title"><span class="field-icon hum">💧</span><span>Humidity</span><small>%</small></div>
+              <input type="number" name="humidity" min="0" max="100" step="0.01" placeholder="e.g. 60" required>
+              <small class="range">(0 – 100)</small>
+            </label>
+            <label class="field">
+              <div class="field-title"><span class="field-icon ph">pH</span><span>Soil pH</span><small></small></div>
+              <input type="number" name="ph" min="3" max="10" step="0.01" placeholder="e.g. 6.5" required>
+              <small class="range">(3.0 – 10.0)</small>
+            </label>
+            <label class="field field-wide">
+              <div class="field-title"><span class="field-icon rain">☁</span><span>Rainfall</span><small>mm</small></div>
+              <input type="number" name="rainfall" min="0" max="2000" step="0.01" placeholder="e.g. 100" required>
+              <small class="range">(0 – 2000)</small>
+            </label>
+          </div>
+
+          
+          <button class="recommend-btn" type="submit" id="recommendBtn">
+            <span class="sparkle">✦</span><span>Get Crop Recommendation</span><span class="btn-arrow">→</span>
+          </button>
+        </form>
+      </div>
+
+      <aside class="why-card" id="about">
+        <div class="farm-illustration">
+          <div class="ill-sun">☀</div><div class="cloud cloud-a"></div><div class="cloud cloud-b"></div>
+          <div class="mountain m1"></div><div class="mountain m2"></div>
+          <div class="farm-field farm-field-a"></div><div class="farm-field farm-field-b"></div><div class="tractor">🚜</div>
+        </div>
+        <h3>Why Smart Agriculture AI?</h3>
+        <div class="why-item"><span>🌱</span><div><strong>Increases Productivity</strong><small>Get the right crop for your soil and climate.</small></div></div>
+        <div class="why-item"><span>💧</span><div><strong>Saves Resources</strong><small>Use water, fertilizer and land efficiently.</small></div></div>
+        <div class="why-item"><span>♢</span><div><strong>Supports Sustainable Farming</strong><small>Better decisions for a greener future.</small></div></div>
+        <div class="quote">“Healthy soil today,<br><b>food security tomorrow.”</b></div>
+      </aside>
+    </section>
+
+    <section class="result-section" id="resultSection">
+      <div class="result-card">
+        <div class="result-icon">✦</div>
+        <div class="result-text"><span>AI RECOMMENDATION</span><h2 id="cropResult">Ready for prediction</h2><p id="resultMessage">Enter all 7 values above and click Get Crop Recommendation.</p></div>
+        <div class="result-status" id="resultStatus">Waiting</div>
+      </div>
+    </section>
+
+    <section class="history-section" id="history">
+      <span class="mini-label">SUPPORTED EXAMPLES</span>
+      <h2>Popular Crop Categories</h2>
+      <p>Examples of crop labels the trained model can recommend.</p>
+      <div class="crop-grid">
+        <div class="crop-card">🌾 <b>Rice</b></div><div class="crop-card">🌿 <b>Wheat</b></div><div class="crop-card">🌽 <b>Maize</b></div><div class="crop-card">☁️ <b>Cotton</b></div><div class="crop-card">🫘 <b>Beans</b></div><div class="crop-card">🍉 <b>Fruits</b></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand">🌿 &nbsp; Smart Agriculture AI</div><span class="footer-divider">|</span><span>Empowering Farmers with Technology</span>
+    <div class="footer-right"><span>Made with ♥ for a Greener Future</span></div>
+  </footer>
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>

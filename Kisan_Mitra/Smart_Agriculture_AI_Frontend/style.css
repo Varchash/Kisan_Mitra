@@ -1,0 +1,881 @@
+/* =========================================================
+   UPDATED IMAGE VERSION
+   ---------------------------------------------------------
+   Top image = full hero background.
+   CSS-made top decorations are hidden.
+   Side box = image only.
+   CSS-made side decorations are hidden.
+   ========================================================= */
+
+/* =========================
+   GLOBAL VARIABLES
+   ========================= */
+:root {
+    --green:#159b63;
+    --green-dark:#0c5146;
+    --green-deep:#083e36;
+    --green-soft:#eaf8ef;
+    --ink:#163f48;
+    --muted:#6f8992;
+    --line:#d9e8e2;
+    --shadow:0 18px 50px rgba(18,86,64,.11)
+}
+
+/* =========================
+   RESET / BASIC STYLES
+   ========================= */
+* {
+    box-sizing:border-box;
+    margin:0;
+    padding:0
+}
+html {
+    scroll-behavior:smooth
+}
+body {
+    font-family:Inter,Segoe UI,Arial,sans-serif;
+    color:var(--ink);
+    background:linear-gradient(#f9fdfb,#edf8f3);
+    overflow-x:hidden
+}
+button,input {
+    font:inherit
+}
+button {
+    cursor:pointer
+}
+a {
+    text-decoration:none;
+    color:inherit
+}
+.hidden {
+    display:none!important
+}
+
+/* =========================
+   NAVBAR
+   ========================= */
+.navbar {
+    height:76px;
+    padding:0 clamp(24px,5.5vw,84px);
+    display:flex;
+    align-items:center;
+    background:rgba(255,255,255,.96);
+    border-bottom:1px solid #e0ece7;
+    position:sticky;
+    top:0;
+    z-index:20
+}
+.brand {
+    display:flex;
+    align-items:center;
+    gap:10px
+}
+.brand-mark {
+    width:44px;
+    height:44px;
+    color:#179d61
+}
+.brand-mark svg {
+    width:42px;
+    height:42px
+}
+.brand-text {
+    font-size:27px;
+    font-weight:800;
+    letter-spacing:-1px;
+    color:#123c45
+}
+.brand-text b {
+    color:#15a461
+}
+.nav-links {
+    margin-left:auto;
+    display:flex;
+    gap:30px;
+    align-items:center
+}
+.nav-links a {
+    font-size:15px;
+    font-weight:700;
+    padding:29px 5px 25px;
+    position:relative;
+    color:#17434c
+}
+.nav-links a.active,.nav-links a:hover {
+    color:#108b5c
+}
+.nav-links a.active:after {
+    content:"";
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    height:4px;
+    background:#1aa76d;
+    border-radius:4px
+}
+.login-btn {
+    margin-left:36px;
+    border:0;
+    background:linear-gradient(135deg,#15945d,#2bab63);
+    color:#fff;
+    border-radius:13px;
+    padding:11px 19px;
+    font-weight:800;
+    font-size:14px
+}
+.menu-toggle {
+    display:none;
+    background:none;
+    border:0;
+    font-size:25px;
+    color:var(--green-dark)
+}
+
+/* =========================
+   HERO SECTION
+   ========================= */
+.hero {
+    height:214px;
+    position:relative;
+    overflow:hidden;
+    background:linear-gradient(90deg,#effaf2 0%,#eef9f2 37%,#cce8e8 68%,#e6f2d4 100%);
+    border-bottom:1px solid #d8e8e0
+}
+.hero:after {
+    display:none;
+}
+.hero-content {
+    position:relative;
+    z-index:4;
+    padding:34px clamp(28px,5.5vw,82px);
+    max-width:750px
+}
+.hero-label {
+    font-size:13px;
+    font-weight:850;
+    letter-spacing:.3px;
+    color:#fefefe;
+    margin-bottom:12px
+}
+.hero h1 {
+    font-size:43px;
+    line-height:1.08;
+    letter-spacing:-1.8px;
+    color:#fcfdfd
+}
+.hero h1 em {
+    font-style:normal;
+    color:#013901
+}
+.hero p {
+    font-size:16px;
+    line-height:1.55;
+    color:#d3dadc;
+    margin-top:10px;
+    max-width:680px
+}
+.hero-art {
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+
+    background-image:url("https://res.cloudinary.com/w6xk45pg/image/upload/v1790590827/Field.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    z-index:1;
+}
+.hero-sun {
+    display:none;
+}
+.hero-hills {
+    display:none;
+}
+.hero-field {
+    display:none;
+}
+.hero-soil {
+    display:none;
+}
+.hero-plant {
+    display:none;
+}
+.hero-plant:before {
+    content:"";
+    position:absolute;
+    left:49px;
+    bottom:0;
+    width:7px;
+    height:112px;
+    border-radius:8px;
+    background:#176e43
+}
+.hero-plant i,.hero-plant b {
+    position:absolute;
+    width:75px;
+    height:37px;
+    background:linear-gradient(135deg,#72cf55,#148449);
+    border-radius:90% 10% 90% 10%;
+    display:block
+}
+.hero-plant i {
+    left:0;
+    top:52px;
+    transform:rotate(22deg)
+}
+.hero-plant b {
+    right:-10px;
+    top:24px;
+    transform:rotate(-26deg) scaleX(-1)
+}
+.hero-script {
+    display:none;
+}
+.hero-script strong {
+    margin-left:14px
+}
+.hero-script u {
+    display:block;
+    width:75px;
+    height:2px;
+    background:#287e61;
+    margin:4px auto;
+    text-decoration:none
+}
+
+/* =========================
+   MAIN WORKSPACE / FORM
+   ========================= */
+.workspace {
+    max-width:1450px;
+    margin:-1px auto 0;
+    padding:0 38px 20px;
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 390px;
+    gap:0;
+    position:relative;
+    z-index:6
+}
+.prediction-card,.why-card {
+    background:rgba(255,255,255,.97);
+    border:1px solid #d8e7e0;
+    box-shadow:var(--shadow)
+}
+.prediction-card {
+    border-radius:20px 0 0 20px;
+    padding:26px 34px 20px
+}
+.why-card {
+    border-radius:0 20px 20px 0;
+    padding:31px 28px 24px
+}
+.section-heading {
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:20px
+}
+.heading-icon {
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    background:linear-gradient(145deg,#18a267,#35bd79);
+    color:#fff;
+    font-size:24px
+}
+.section-heading h2 {
+    font-size:22px;
+    letter-spacing:-.7px;
+    color:#0b4b43
+}
+.section-heading p {
+    font-size:13px;
+    color:#66828b;
+    margin-top:3px
+}
+/* Arrange the input fields in columns */
+.input-grid {
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    column-gap:24px;
+    row-gap:14px;
+    position:relative
+}
+.prediction-card .field {
+    position:relative;
+    display:block;
+    width:auto;
+    min-width:0;
+    padding:0 0 10px;
+    border-bottom:1px solid #e0ebe7;
+    transform:none;
+    float:none
+}
+.field {
+    display:block;
+    padding:0 0 9px;
+    border-bottom:1px solid #e0ebe7
+}
+.field-title {
+    display:flex;
+    align-items:center;
+    gap:9px;
+    font-size:14px;
+    font-weight:750;
+    color:#173f49;
+    margin-bottom:7px
+}
+.field-title small {
+    margin-left:auto;
+    font-size:11px;
+    color:#78909a;
+    font-weight:600
+}
+.field-icon {
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    color:#fff;
+    font-size:14px;
+    font-weight:900;
+    flex:none
+}
+.field-icon.n {
+    background:#2baa5e
+}
+.field-icon.p {
+    background:#247fd2
+}
+.field-icon.k {
+    background:#8743dd
+}
+.field-icon.temp {
+    background:#fa4853
+}
+.field-icon.hum {
+    background:#278fdb;
+    font-size:16px
+}
+.field-icon.ph {
+    background:#20afba
+}
+.field-icon.rain {
+    background:#5136bc
+}
+.field input {
+    width:100%;
+    height:42px;
+    border:1px solid #d3e0e5;
+    border-radius:9px;
+    outline:none;
+    padding:0 13px;
+    color:#173f49;
+    background:#fff;
+    font-size:14px
+}
+.field input:focus {
+    border-color:#36b978;
+    box-shadow:0 0 0 3px rgba(44,181,113,.10)
+}
+.field input::placeholder {
+    color:#94a8b1
+}
+.range {
+    display:block;
+    font-size:11px;
+    color:#7c98a3;
+    margin:3px 4px 0
+}
+.field-wide {
+    grid-column:1/2
+}
+.input-explanation {
+    margin-top:12px;
+    padding:9px 12px;
+    border-radius:10px;
+    background:#f2faf5;
+    color:#68848a;
+    font-size:11px
+}
+.input-explanation span:first-child {
+    color:#159c61;
+    font-weight:900;
+    margin-right:6px
+}
+.input-explanation b {
+    color:#17614f
+}
+/* Main button used to request the crop recommendation */
+.recommend-btn {
+    width:100%;
+    height:55px;
+    margin-top:12px;
+    border:0;
+    border-radius:12px;
+    background:linear-gradient(100deg,#078557,#1ca35f);
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:13px;
+    font-weight:850;
+    font-size:16px;
+    box-shadow:0 10px 22px rgba(17,139,88,.18);
+    transition:.2s
+}
+.recommend-btn:hover {
+    transform:translateY(-2px)
+}
+.recommend-btn:disabled {
+    opacity:.7;
+    cursor:wait;
+    transform:none
+}
+.sparkle {
+    color:#ffe052;
+    font-size:21px
+}
+.btn-arrow {
+    font-size:22px
+}
+/* Decorative farm illustration on the right side */
+.farm-illustration {
+    height: 170px;
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+
+    background-image: url("https://res.cloudinary.com/w6xk45pg/image/upload/v1790590150/Soil.jpg");
+
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+.ill-sun {
+    display:none;
+}
+.cloud {
+    display:none;
+}
+.cloud:before,.cloud:after {
+    display:none;
+}
+.cloud:before {
+    width:27px;
+    height:27px;
+    left:9px;
+    top:-12px
+}
+.cloud:after {
+    width:22px;
+    height:22px;
+    left:31px;
+    top:-8px
+}
+.cloud-a {
+    display:none;
+}
+.cloud-b {
+    display:none;
+}
+.mountain {
+    display:none;
+}
+.m1 {
+    display:none;
+}
+.m2 {
+    display:none;
+}
+.farm-field {
+    display:none;
+}
+.farm-field-a {
+    display:none;
+}
+.farm-field-b {
+    display:none;
+}
+.tractor {
+    display:none;
+}
+.why-card h3 {
+    font-size:22px;
+    color:#0d4d44;
+    margin:17px 0
+}
+.why-item {
+    display:flex;
+    align-items:center;
+    gap:13px;
+    margin:15px 0
+}
+.why-item>span {
+    width:43px;
+    height:43px;
+    flex:none;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    background:#ddf5e5;
+    font-size:21px
+}
+.why-item strong {
+    display:block;
+    font-size:14px;
+    color:#11945f
+}
+.why-item small {
+    display:block;
+    font-size:12px;
+    color:#65818b;
+    line-height:1.4;
+    margin-top:3px
+}
+.quote {
+    margin-top:18px;
+    padding:15px 17px;
+    border-radius:13px;
+    background:linear-gradient(90deg,#e2f7e9,#d8f1df);
+    font-size:14px;
+    line-height:1.55;
+    color:#247153;
+    font-style:italic
+}
+
+/* =========================
+   RESULT SECTION
+   ========================= */
+.result-section {
+    max-width:1375px;
+    margin:auto;
+    padding:0 38px 22px
+}
+.result-card {
+    background:#103f39;
+    border-radius:16px;
+    color:#fff;
+    padding:18px 25px;
+    display:flex;
+    align-items:center;
+    gap:17px;
+    box-shadow:0 14px 35px rgba(10,73,57,.15)
+}
+.result-icon {
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    background:rgba(104,223,156,.14);
+    color:#8cecae;
+    font-size:21px
+}
+.result-text {
+    flex:1
+}
+.result-text>span {
+    font-size:10px;
+    letter-spacing:1.5px;
+    color:#77dfa2;
+    font-weight:850
+}
+.result-text h2 {
+    font-size:25px;
+    color:#a2efba;
+    margin-top:2px
+}
+.result-text p {
+    font-size:11px;
+    color:#bad3cc;
+    margin-top:3px
+}
+.result-status {
+    padding:9px 13px;
+    border:1px solid rgba(132,238,171,.3);
+    border-radius:99px;
+    color:#9ceeb4;
+    background:rgba(80,207,128,.08);
+    font-size:11px;
+    font-weight:800
+}
+
+/* =========================
+   HISTORY / CROP CARDS
+   ========================= */
+.history-section {
+    max-width:1375px;
+    margin:auto;
+    padding:4px 38px 30px;
+    text-align:center
+}
+.mini-label {
+    font-size:10px;
+    letter-spacing:1.5px;
+    color:#159b63;
+    font-weight:850
+}
+.history-section h2 {
+    font-size:21px;
+    color:#104b45;
+    margin:3px
+}
+.history-section>p {
+    font-size:11px;
+    color:#748b92
+}
+/* Display crop cards in a grid */
+.crop-grid {
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:12px;
+    margin-top:15px
+}
+.crop-card {
+    padding:13px;
+    border:1px solid var(--line);
+    border-radius:12px;
+    background:#fff;
+    font-size:13px;
+    box-shadow:0 7px 20px rgba(26,92,67,.06)
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+footer {
+    min-height:68px;
+    background:#0d4f4b;
+    color:#d9ece6;
+    padding:0 clamp(25px,5.5vw,84px);
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:11px
+}
+.footer-brand {
+    font-weight:850;
+    color:#fff;
+    font-size:13px
+}
+.footer-divider {
+    opacity:.45
+}
+.footer-right {
+    margin-left:auto;
+    display:flex;
+    gap:16px;
+    align-items:center
+}
+.footer-right span:not(:last-child) {
+    font-weight:800;
+    color:#fff
+}
+.toast {
+    position:fixed;
+    right:22px;
+    bottom:22px;
+    background:#0b5042;
+    color:#fff;
+    padding:12px 16px;
+    border-radius:10px;
+    opacity:0;
+    transform:translateY(20px);
+    transition:.25s;
+    z-index:50;
+    font-size:12px
+}
+.toast.show {
+    opacity:1;
+    transform:none
+}
+
+/* =========================
+   TABLET RESPONSIVE DESIGN
+   ========================= */
+@media(max-width:1050px) {
+
+/* =========================
+   MAIN WORKSPACE / FORM
+   ========================= */
+    .workspace {
+        grid-template-columns:1fr
+    }
+    .prediction-card {
+        border-radius:20px
+    }
+    .why-card {
+        display:none
+    }
+    .hero-art {
+        inset:0;
+        width:100%;
+        height:100%;
+        opacity:1;
+    }
+    /* Display crop cards in a grid */
+.crop-grid {
+        grid-template-columns:repeat(3,1fr)
+    }
+}
+
+/* =========================
+   MOBILE RESPONSIVE DESIGN
+   ========================= */
+@media(max-width:760px) {
+
+/* =========================
+   NAVBAR
+   ========================= */
+    .navbar {
+        height:68px;
+        padding:0 20px
+    }
+    .nav-links {
+        display:none;
+        position:absolute;
+        top:68px;
+        left:12px;
+        right:12px;
+        background:#fff;
+        border:1px solid var(--line);
+        border-radius:12px;
+        padding:7px;
+        box-shadow:var(--shadow);
+        flex-direction:column;
+        gap:0
+    }
+    .nav-links.open {
+        display:flex
+    }
+    .nav-links a {
+        width:100%;
+        padding:12px
+    }
+    .nav-links a.active:after {
+        display:none
+    }
+    .menu-toggle {
+        display:block;
+        margin-left:auto
+    }
+    .login-btn {
+        margin-left:12px;
+        padding:9px 13px
+    }
+    .brand-text {
+        font-size:19px
+    }
+
+/* =========================
+   HERO SECTION
+   ========================= */
+    .hero {
+        height:300px
+    }
+    .hero-content {
+        padding:30px 22px;
+        max-width:100%
+    }
+    .hero h1 {
+        font-size:35px
+    }
+    .hero p {
+        font-size:14px
+    }
+    .hero-art {
+        inset:0;
+        width:100%;
+        height:100%;
+        opacity:1;
+    }
+
+/* =========================
+   MAIN WORKSPACE / FORM
+   ========================= */
+    .workspace {
+        padding:0 14px 18px
+    }
+    .prediction-card {
+        padding:20px 17px;
+        border-radius:16px
+    }
+    /* Arrange the input fields in columns */
+.input-grid {
+        grid-template-columns:1fr;
+        gap:10px
+    }
+    .field-wide {
+        grid-column:auto
+    }
+    .section-heading h2 {
+        font-size:19px
+    }
+    /* Main button used to request the crop recommendation */
+.recommend-btn {
+        font-size:14px
+    }
+    .result-section,.history-section {
+        padding-left:14px;
+        padding-right:14px
+    }
+    .result-card {
+        align-items:flex-start
+    }
+    .result-status {
+        margin-left:auto
+    }
+    /* Display crop cards in a grid */
+.crop-grid {
+        grid-template-columns:repeat(2,1fr)
+    }
+
+/* =========================
+   FOOTER
+   ========================= */
+    footer {
+        padding:16px 20px;
+        flex-wrap:wrap
+    }
+    .footer-right {
+        width:100%;
+        margin-left:0
+    }
+}
+
+/* =========================
+   SMALL MOBILE RESPONSIVE DESIGN
+   ========================= */
+@media(max-width:430px) {
+    .brand-text {
+        font-size:16px
+    }
+    .brand-mark {
+        width:36px
+    }
+    .hero h1 {
+        font-size:31px
+    }
+    .hero-label {
+        font-size:11px
+    }
+    .result-card {
+        flex-direction:column
+    }
+    .result-status {
+        margin-left:0
+    }
+    /* Display crop cards in a grid */
+.crop-grid {
+        gap:8px
+    }
+}
